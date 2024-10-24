@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #slotContainer,
+        #timeContainer {
+            display: none;
+            /* Initially hidden */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Restaurant Booking Form</h2>
+    <form id="bookingForm">
+        <label for="bookingChoice">Choice of Booking:</label>
+        <select id="bookingChoice" required>
+            <option value="">Select Booking Type</option>
+            <option value="fullDay">Full Day Booking</option>
+            <option value="halfDay">Half Day Booking</option>
+            <option value="hourly">Hourly Booking</option>
+        </select>
+
+        <label for="name">User Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="guests">Number of Persons:</label>
+        <input type="number" id="guests" min="1" required>
+
+        <div id="dateTimeContainer">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <div id="timeContainer">
+                <label for="time">Time:</label>
+                <input type="time" id="time">
+            </div>
+
+            <div id="slotContainer">
+                <label for="slot">Select Slot:</label>
+                <select id="slot">
+                    <option value="">Select Slot</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit">Book Now</button>
+    </form>
+
+    <div id="confirmation" style="margin-top: 20px;"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
