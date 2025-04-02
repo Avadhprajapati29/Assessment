@@ -3,21 +3,19 @@ document.getElementById('bookingChoice').addEventListener('change', function () 
     const timeContainer = document.getElementById('timeContainer');
     const slotContainer = document.getElementById('slotContainer');
 
-    // Reset visibility
     timeContainer.style.display = 'none';
     slotContainer.style.display = 'none';
 
     if (bookingType === 'halfDay') {
-        slotContainer.style.display = 'block'; // Show slot options for half day
+        slotContainer.style.display = 'block'; 
     } else if (bookingType === 'hourly') {
-        timeContainer.style.display = 'block'; // Show time input for hourly booking
+        timeContainer.style.display = 'block';
     }
 });
 
 document.getElementById('bookingForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
 
-    // Get form values
     const name = document.getElementById('name').value;
     const mobile = document.getElementById('mobile').value;
     const email = document.getElementById('email').value;
@@ -27,7 +25,6 @@ document.getElementById('bookingForm').addEventListener('submit', function (even
     const slot = document.getElementById('slot').value;
     const bookingType = document.getElementById('bookingChoice').value;
 
-    // Display confirmation message
     document.getElementById('confirmation').innerHTML = `
         <p>Booking Confirmation:</p>
         <p>Name: ${name}</p>
